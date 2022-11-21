@@ -7,8 +7,6 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 
 def callback (data):
-    rospy. loginfo("x = %f" % data.x)
-    rospy.loginfo("y = %f" % data.y )
 
     if ((data.x <= 0.5 or data.y ==10.0)):
 
