@@ -26,7 +26,15 @@ def callback (data):
 
         rospy. loginfo("turtle hit the wall")
 
+def readturtlemovement():
+
+    rospy. init_node('turtle_antiwallcollision', anonymous=True)
+
+    rospy.Subscriber("/turtle1/pose", Pose , callback)
+    
+    rospy.spin()
 
 
 if __name__ == '__main__' :
-   
+
+    readturtlemovement ()
