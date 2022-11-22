@@ -14,10 +14,11 @@ pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 def rotate180():
     t0 = rospy.Time.now().to_sec()
     currentAngle=0
-    move_cmd.angular.z=1
-    move_cmd.linear.x = 1
+    move_cmd.angular.z=0.5
+    move_cmd.linear.x = 0.5
     rotate= math.radians(180)
-    while currentAngle<3.14:
+
+    while currentAngle<3.14/180:
 
         print("CurrentAngle : ",currentAngle)
         t1 = rospy.Time.now().to_sec()
