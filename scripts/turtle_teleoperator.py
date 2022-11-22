@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist
 pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 
 n = rospy.init_node('turtle_teleoperator',anonymous=False)
-rate = rospy.Rate(60)
+rate = rospy.Rate(10)
 linear_speed=1.0
 angular_speed=1.0
 
