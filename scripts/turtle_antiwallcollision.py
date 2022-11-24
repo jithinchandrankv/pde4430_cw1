@@ -14,8 +14,8 @@ pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 def rotate180():
     t0 = rospy.Time.now().to_sec()
     currentAngle=0
-    move_cmd.angular.z=0.5
-    move_cmd.linear.x = 0.5
+    move_cmd.angular.z= 3
+    move_cmd.linear.x = 1
     rotate= math.radians(180)
 
     while currentAngle<3.14/180:
@@ -33,20 +33,22 @@ def rotate180():
 
 def callback (data):
 
-    if ((data.x <= 0.5 or data.y >=10.0)):
+
+
+    if ((data.x <= 0.5 or data.y >=10.2)):
         rotate180()
         rospy. loginfo("turtle hit the wall")
         
 
-    elif (( data.x >=11.0 or data.y <= 0.5)):
+    elif (( data.x >=10.2 or data.y <= 0.7)):
         rotate180()
         rospy. loginfo("turtle hit the wall")
 
-    elif (data.x == 0.015 and data.y == 0.05):
+    elif (data.x == 0.5 and data.y == 0.7):
         rotate180()
         rospy. loginfo("turtle hit the wall")
 
-    elif (data.x >= 11.0 and data.y >= 11.0):
+    elif (data.x >= 10.2 and data.y >= 10.2):
         rotate180()
         rospy. loginfo("turtle hit the wall")
 

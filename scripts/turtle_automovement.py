@@ -17,25 +17,54 @@ pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 
 
 def callback(data):
-
     pose=data
-
-
-
-def automovement():
     destination_pose = Pose()
-
-    rospy.init_node('turtle_automovement', anonymous=True)
+    velocity=Twist()
+   
     
-    rospy.Subscriber("/turtle1/pose", Pose , callback)
+def movement(PoseData,velocity):
+    
+    destination_tolerance = input("tolerance: ")
+    displacement = sqrt(pow(destination_pose.x - Pose.x,2) + pow(destination_pose.y - Pose.y,2))
+    steering_angle = atan2(destination_pose.y- Pose.y, destination_pose.x-Pose.x) - Pose.theta
+
+    while displacement >= destination_tolerance:
+
+        steering_angle = abs(atan2(destination_pose.y-Pose.y, destination_pose.x-Pose.x) - Pose.theta)
+        velocity.linear.x = 0.0
+        velocity.angular.z = steering_angle *0.4
+
+    if displacement>0.2:
+        velocity.angular.z = atan2(destination_pose.y-Pose.y, destination_pose.x-Pose.x) - Pose.theta
+        velocity.linear.x = displacement * 0.2
+       
+        pub.publish(velocity)
+
+    else:
+        velocity.angular.z = 0
+        velocity.linear.x = 0
+        
+        pub.publish(velocity)
+
+def autoMove():
+
+    rospy.init_node('turtlebolt_controller', anonymous=True)
+
+    rospy.Subscriber("/turtle1/pose", Pose , callback,movement)
+
     rate = rospy.Rate(10)
     
-    user_input = input("Enter goal coordinates in x,y format: ")
-    destination_tolerance = input("tolerance: ")
-    tokens = user_input.split(",", 1)
-    x_coordinate = tokens[0]
-    y_coordinate = tokens[1]
+    destination_pose.x = float(input("Enter destination X coordinate: "))
+    destination_pose.y = float(input("Enter destination Y coordinate: "))
 
-    print(x_coordinate)
-    print(y_coordinate)
+    rospy.spin()
+
+
+if __name__ == '__main__':
+    try:
+
+        autoMove()
+            
+    except rospy.ROSInterruptException:
+        pass
     
