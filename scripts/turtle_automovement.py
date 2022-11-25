@@ -12,57 +12,60 @@ pose = Pose()
 destination_pose = Pose()
 velocity=Twist()
 
-pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
+velocity_pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 
+j=rospy.init_node('turtle_automovement', anonymous=True)
+rate = rospy.Rate(50)
 
-
-def callback(data):
-    pose=data
-    destination_pose = Pose()
-    velocity=Twist()
-   
-    
-def movement(PoseData,velocity):
-    
-    destination_tolerance = input("tolerance: ")
-    displacement = sqrt(pow(destination_pose.x - Pose.x,2) + pow(destination_pose.y - Pose.y,2))
-    steering_angle = atan2(destination_pose.y- Pose.y, destination_pose.x-Pose.x) - Pose.theta
-
-    while displacement >= destination_tolerance:
-
-        steering_angle = abs(atan2(destination_pose.y-Pose.y, destination_pose.x-Pose.x) - Pose.theta)
-        velocity.linear.x = 0.0
-        velocity.angular.z = steering_angle *0.4
-
-    if displacement>0.2:
-        velocity.angular.z = atan2(destination_pose.y-Pose.y, destination_pose.x-Pose.x) - Pose.theta
-        velocity.linear.x = displacement * 0.2
-       
-        pub.publish(velocity)
-
-    else:
-        velocity.angular.z = 0
-        velocity.linear.x = 0
-        
-        pub.publish(velocity)
-
-def autoMove():
-
-    rospy.init_node('turtlebolt_controller', anonymous=True)
-
-    rospy.Subscriber("/turtle1/pose", Pose , callback,movement)
-
-    rate = rospy.Rate(10)
+def position():
+    pose.x=round(pose.x,4)
+    pose.y=round(pose.y,4)
+    destination_pose.x=round(destination_pose.x,4)
+    destination_pose.y=round(destination_pose.y,4)
+  
+def movement(pose,velocity_pub):
     
     destination_pose.x = float(input("Enter destination X coordinate: "))
     destination_pose.y = float(input("Enter destination Y coordinate: "))
+    
+    displacement = sqrt(pow(destination_pose.x - pose.x,2) + pow(destination_pose.y - pose.y,2))
 
+    steering_angle = atan2(destination_pose.y- pose.y, destination_pose.x-pose.x) - pose.theta
+
+    while abs(displacement)>= 0.1:
+        velocity.linear.x = 0.0
+        velocity.angular.z = steering_angle *4
+        velocity_pub.publish(velocity)
+        rate.sleep()
+        if round(steering_angle,2)<=0.0:
+        
+            velocity.linear.x = displacement * 1.5
+            velocity.angular.z = 0.0
+            velocity_pub.publish(velocity)
+            rate.sleep()
+
+    
+    else:
+        velocity.angular.z = 0
+        velocity.linear.x = 0
+        print ("displacement: reached")
+        velocity_pub.publish(velocity)
+        rospy.sleep()
+
+        
+
+def autoMove():
+
+
+    velocity_pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
+    pose_subscriber=rospy.Subscriber("/turtle1/pose", pose , movement )
+   
     rospy.spin()
 
 
 if __name__ == '__main__':
     try:
-
+        
         autoMove()
             
     except rospy.ROSInterruptException:
