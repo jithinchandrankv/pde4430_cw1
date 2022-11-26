@@ -12,16 +12,20 @@ pose = Pose()
 destination_pose = Pose()
 velocity=Twist()
 
-velocity_pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 
 j=rospy.init_node('turtle_automovement', anonymous=True)
 rate = rospy.Rate(50)
 
-def position():
+def position(data):
+    pose=data
     pose.x=round(pose.x,4)
     pose.y=round(pose.y,4)
     destination_pose.x=round(destination_pose.x,4)
     destination_pose.y=round(destination_pose.y,4)
+    
+def move(linear,angular):
+    velocity.linear.x=linear
+    velocity.linear.z=angular
   
 def movement(pose,velocity_pub):
     
