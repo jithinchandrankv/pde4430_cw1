@@ -90,4 +90,13 @@ RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and f
 ## Task 3:Avoiding wall collision
 
 In this task, turtle will detect wall and move away from that.For that assigned the wall limit,incase,it reach to wall,terminal will display like "turtle will hit the wall".
-Need to run turtlesim_node and turtle_antiwallcollision.py file in the terminal.
+
+
+![wall detection move](https://user-images.githubusercontent.com/117764288/204141152-79fedfc7-5188-4855-ade7-d7133d5f58da.JPG)
+
+
+
+Need to run turtlesim_node,turtle_teleoperator.py and turtle_antiwallcollision.py file in the terminal.
+
+
+![rqt anticollision](https://user-images.githubusercontent.com/117764288/204141140-0feaa24b-e2c5-472d-9b39-1336349e37b7.JPG)
