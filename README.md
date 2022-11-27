@@ -36,8 +36,28 @@ Added seperate python file for each task .To run this package,always to run  "ro
 ## Task 1 :  Teleoperation using the keyboard
 
    In this task , turtle will controlled using keyboard keys.Also speed will adjust with help of key.For that , need to run turtlesim_node and teleoperator.py. file in the terminal.
+   
+   
+   ![TELEOPERATOR FIRST](https://user-images.githubusercontent.com/117764288/204133640-c1533317-d4c2-4e63-b903-853f7697c12a.JPG)
+
+   
 
    while running terminal display the which direction key is pressed.
+   
+   
+   ![TELEOPERATOR RUN](https://user-images.githubusercontent.com/117764288/204133824-833a06f9-ba11-4ba0-a3e9-974ef2b82e82.JPG)
+   
+   
+   
+   RQT_GRAPH:It will gives information about subcriber,topics,node ,publisher and flow. 
+   
+   
+   
+   
+   ![image](https://user-images.githubusercontent.com/117764288/204134098-2b1afbf3-4041-4802-aba2-65fbe8fb00a8.png)
+
+
+   
 
    
 
@@ -45,7 +65,27 @@ Added seperate python file for each task .To run this package,always to run  "ro
 
 In this task , turtle will move to any given position with proper orientation and velocity.For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
 
-After run thE python file in the terminal,terminal will ask for the X and Y destination coordinate.If the reached to the given position,it will inform "destination reached". 
+After run thE python file in the terminal,terminal will ask for the X and Y destination coordinate.
+
+
+![image](https://user-images.githubusercontent.com/117764288/204134510-b7a233b2-042e-4745-9986-205b984302d0.png)
+
+
+
+If the reached to the given position,it will inform "destination reached".
+
+
+
+![automovement move](https://user-images.githubusercontent.com/117764288/204134626-6aef58f3-ba5e-403e-933a-507c82272c51.JPG)
+
+
+RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and flow.
+
+
+![rqt automovement](https://user-images.githubusercontent.com/117764288/204134862-982a247f-9dd2-4972-af43-820fa8124b9c.JPG)
+
+
+
 
 ## Task 3:Avoiding wall collision
 
