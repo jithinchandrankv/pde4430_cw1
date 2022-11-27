@@ -36,6 +36,8 @@ Added seperate python file for each task .To run this package,always to run  "ro
 ## Task 1 :  Teleoperation using the keyboard
 
    In this task , turtle will controlled using keyboard keys.Also speed will adjust with help of key.For that , need to run turtlesim_node and teleoperator.py. file in the terminal.
+   
+   
    ![TELEOPERATOR FIRST](https://user-images.githubusercontent.com/117764288/204133640-c1533317-d4c2-4e63-b903-853f7697c12a.JPG)
 
    
