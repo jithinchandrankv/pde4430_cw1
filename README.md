@@ -47,3 +47,8 @@ In this task , turtle will move to any given position with proper orientation an
 For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
 
 after run thr python file in the terminal,terminal will ask for the X and Y destination coordinate.If the reached to the given position,it will inform "destination reached". 
+
+## Task 3:Avoiding wall collision
+
+In this task, turtle will detect wall and move away from that.For that assigned the wall limit,incase,it reach to wall,terminal will display like "turtle will hit the wall".
+Need to run turtlesim_node and turtle_antiwallcollision.py file in the terminal.
