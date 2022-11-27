@@ -3,7 +3,7 @@
 
 PDE4430_COURSE WORK 1
 
-##Aim
+Aim
 
    To move a mobile robot in a meaningful way using the
 Robotic Operating System (ROS) , the TurtleSim and perform various task like:
