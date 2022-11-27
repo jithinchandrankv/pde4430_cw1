@@ -1,9 +1,11 @@
 
+
+
 #           MOBILE ROBOTICS
 
-PDE4430_COURSE WORK 1
+## PDE4430_COURSE WORK 1
 
-Aim
+## Aim
 
    To move a mobile robot in a meaningful way using the
 Robotic Operating System (ROS) , the TurtleSim and perform various task like:
@@ -35,6 +37,9 @@ Added seperate python file for each task .To run this package,always to run  "ro
 
 ## Task 1 :  Teleoperation using the keyboard
 
+
+
+
    In this task , turtle will controlled using keyboard keys.Also speed will adjust with help of key.For that , need to run turtlesim_node and teleoperator.py. file in the terminal.
    
    
@@ -65,7 +70,7 @@ Added seperate python file for each task .To run this package,always to run  "ro
 
 In this task , turtle will move to any given position with proper orientation and velocity.For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
 
-After run thE python file in the terminal,terminal will ask for the X and Y destination coordinate.
+After run the python file in the terminal,terminal will ask for the X and Y destination coordinate.
 
 
 ![image](https://user-images.githubusercontent.com/117764288/204134510-b7a233b2-042e-4745-9986-205b984302d0.png)
@@ -80,7 +85,7 @@ If the reached to the given position,it will inform "destination reached".
 
 
 
-RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and flow.
+RQT Graph:It will gives information about subcriber,topics,node ,publisher and flow.
 
 
 
