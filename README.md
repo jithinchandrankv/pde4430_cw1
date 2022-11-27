@@ -46,6 +46,14 @@ Added seperate python file for each task .To run this package,always to run  "ro
    
    
    ![TELEOPERATOR RUN](https://user-images.githubusercontent.com/117764288/204133824-833a06f9-ba11-4ba0-a3e9-974ef2b82e82.JPG)
+   
+   
+   
+   
+   
+   
+   ![image](https://user-images.githubusercontent.com/117764288/204134098-2b1afbf3-4041-4802-aba2-65fbe8fb00a8.png)
+
 
    
 
