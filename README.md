@@ -11,7 +11,7 @@ Robotic Operating System (ROS) , the TurtleSim and perform various task like:
  • Teleoperation using the keyboard, with an option to
 change movement speed
 
-• Autonomous navigation to any given coordinate in the
+•  in the
 Turtlesim window
 
 • Avoiding wall collision – Override movement if wall
@@ -37,6 +37,13 @@ Added seperate python file for each task .To run this package,always to run  "ro
 
    In this task , turtle will controlled using keyboard keys.Also speed will adjust with help of key.For that , need to run turtlesim_node and teleoperator.py. file in the terminal.
 
-   while running terminal display the which direction is pressed.
+   while running terminal display the which direction key is pressed.
 
    
+
+## Task 2:Autonomous navigation to any given coordinate
+
+In this task , turtle will move to any given position with proper orientation and velocity.
+For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
+
+after run thr python file in the terminal,terminal will ask for the X and Y destination coordinate.If the reached to the given position,it will inform "destination reached". 
