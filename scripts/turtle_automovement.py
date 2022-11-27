@@ -56,6 +56,7 @@ class autonavigation:
             self.rate.sleep()
         
         #turtle stop will stop after the distance covered
+        rospy.loginfo("destination  reached")
         vel_command.linear.x = 0
         vel_command.angular.z= 0
         self.velocity_publisher.publish(vel_command)
