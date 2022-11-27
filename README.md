@@ -49,6 +49,8 @@ Added seperate python file for each task .To run this package,always to run  "ro
    
    
    
+   RQT_GRAPH:It will gives information about subcriber,topics,node and publisher.
+   
    
    
    
