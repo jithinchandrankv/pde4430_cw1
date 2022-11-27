@@ -27,15 +27,16 @@ or more is great
 
 ## Installation
 
-In this course work , created a specific package name pde4430_cw1 inside catkin_ws.Added scripts inside the src file
-
-![image](https://user-images.githubusercontent.com/117764288/204127003-3ec59e5b-1f87-42ba-84d4-ea5d0393cab1.png)
-
+In this course work , created a specific package name pde4430_cw1 inside catkin_ws.Added scripts inside the src file.
+Added seperate python file for each task .To run this package,always to run  "roscore" and"rosrun turtlesim turtlesim_node" in the terminal box.
 
 
 
-## Screenshots
 
-![image](https://user-images.githubusercontent.com/117764288/204126675-6bdad8c8-e5ea-4161-b864-71efa36d79d6.png)
+## Task 1 :  Teleoperation using the keyboard
 
+   In this task , turtle will controlled using keyboard keys.Also speed will adjust with help of key.For that , need to run turtlesim_node and teleoperator.py. file in the terminal.
 
+   while running terminal display the which direction is pressed.
+
+   
