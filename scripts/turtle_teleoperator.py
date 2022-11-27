@@ -29,7 +29,7 @@ def teleoperator():
   
     while not rospy.is_shutdown():
 
-        k = ord (getch.getch())
+        k = ord(getch.getch())
         
         if k==65:
             rospy.loginfo("Up")

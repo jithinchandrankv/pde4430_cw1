@@ -8,10 +8,11 @@ from turtlesim.msg import Pose
 import math
 
 move_cmd = Twist()
-
 pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
 
+#Rotate180 function rotate the turtle when it reaches to limit
 def rotate180():
+
     t0 = rospy.Time.now().to_sec()
     currentAngle=0
     move_cmd.angular.z= 3
@@ -30,11 +31,9 @@ def rotate180():
     pub.publish(move_cmd)
 
     
-
+#This function checks wall detection
 def callback (data):
-
-
-
+    
     if ((data.x <= 0.5 or data.y >=10.2)):
         rotate180()
         rospy. loginfo("turtle hit the wall")
@@ -52,7 +51,9 @@ def callback (data):
         rotate180()
         rospy. loginfo("turtle hit the wall")
 
-def readturtlemovement():
+#walldetect function ,it subscribes pose and publish twist
+
+def walldetect():
 
     rospy. init_node('turtle_antiwallcollision', anonymous=True)
 
@@ -62,7 +63,9 @@ def readturtlemovement():
     
     rospy.spin()
 
-
+#main function calls walldetect()
 if __name__ == '__main__' :
-
-    readturtlemovement ()
+    try:
+        walldetect()
+    except rospy.ROSInterruptException:
+        pass
