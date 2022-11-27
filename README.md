@@ -65,7 +65,20 @@ Added seperate python file for each task .To run this package,always to run  "ro
 
 In this task , turtle will move to any given position with proper orientation and velocity.For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
 
-After run thE python file in the terminal,terminal will ask for the X and Y destination coordinate.If the reached to the given position,it will inform "destination reached". 
+After run thE python file in the terminal,terminal will ask for the X and Y destination coordinate.
+
+
+![image](https://user-images.githubusercontent.com/117764288/204134510-b7a233b2-042e-4745-9986-205b984302d0.png)
+
+
+
+If the reached to the given position,it will inform "destination reached".
+
+
+
+![automovement move](https://user-images.githubusercontent.com/117764288/204134626-6aef58f3-ba5e-403e-933a-507c82272c51.JPG)
+
+
 
 ## Task 3:Avoiding wall collision
 
