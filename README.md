@@ -79,7 +79,9 @@ If the reached to the given position,it will inform "destination reached".
 ![automovement move](https://user-images.githubusercontent.com/117764288/204134626-6aef58f3-ba5e-403e-933a-507c82272c51.JPG)
 
 
+
 RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and flow.
+
 
 
 ![rqt automovement](https://user-images.githubusercontent.com/117764288/204134862-982a247f-9dd2-4972-af43-820fa8124b9c.JPG)
@@ -92,11 +94,13 @@ RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and f
 In this task, turtle will detect wall and move away from that.For that assigned the wall limit,incase,it reach to wall,terminal will display like "turtle will hit the wall".
 
 
-![wall detection move](https://user-images.githubusercontent.com/117764288/204141152-79fedfc7-5188-4855-ade7-d7133d5f58da.JPG)
-
 
 
 Need to run turtlesim_node,turtle_teleoperator.py and turtle_antiwallcollision.py file in the terminal.
 
+
+![wall detection move](https://user-images.githubusercontent.com/117764288/204141152-79fedfc7-5188-4855-ade7-d7133d5f58da.JPG)
+
+RQT Graph:It will gives information about subcriber,topics,node ,publisher and flow.
 
 ![rqt anticollision](https://user-images.githubusercontent.com/117764288/204141140-0feaa24b-e2c5-472d-9b39-1336349e37b7.JPG)
