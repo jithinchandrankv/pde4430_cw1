@@ -33,8 +33,11 @@ class autonavigation:
     
         distance_tolerance = 0.1
         vel_command= Twist()
+
         destination_pose=Pose()
+
         destination_pose.x = float(input("Enter destination X coordinate: "))
+        
         destination_pose.y = float(input("Enter destination Y coordinate: "))
 
 

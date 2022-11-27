@@ -5,15 +5,28 @@ import rospy
 import getch
 from geometry_msgs.msg import Twist
 
+#initiated "turtle_teleoperator" and publish to cmd_vel
+
 pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
-
-n = rospy.init_node('turtle_teleoperator',anonymous=False)
+rospy.init_node('turtle_teleoperator',anonymous=False)
 rate = rospy.Rate(10)
+
+#linear and angular speed given as 1.0 and 0.5 respectively
 linear_speed=1.0
-angular_speed=1.0
+angular_speed=0.5
 
-def initialise():
+#variable linear and angular speed 
 
+variable_linear_speed=linear_speed *2
+variable_angular_speed=angular_speed *2 
+
+
+
+#teleoperator () send linear and angular values to move_cmd
+
+def teleoperator():
+
+  
     while not rospy.is_shutdown():
 
         k = ord (getch.getch())
@@ -22,17 +35,33 @@ def initialise():
             rospy.loginfo("Up")
             move_turtle(linear_speed,0.0)
             
-        elif k==66:
+        if k==66:
             rospy.loginfo("Down")
             move_turtle(-linear_speed,0.0)
             
-        elif k==67:
+        if k==67:
             rospy.loginfo("Right")
             move_turtle(0.0,-angular_speed)
             
-        elif k==68:
+        if k==68:
             rospy.loginfo("Left")
             move_turtle ( 0.0,angular_speed)
+
+        if k==119:
+            rospy.loginfo("forward speed ")
+            move_turtle(variable_linear_speed,0.0)
+        if k==115:
+            rospy.loginfo("backward speed")
+            move_turtle(-variable_linear_speed,0.0)
+        if k==100:
+            rospy.loginfo("Right Angular speed")
+            move_turtle(0.0,-variable_angular_speed)
+        if k==97:
+            rospy.loginfo("left Angular speed ")
+            move_turtle(0.0,variable_angular_speed)
+        
+        
+#defined move_turtle and add values to move_cmd
 
 def move_turtle(linear, angular):
 
@@ -50,7 +79,7 @@ def move_turtle(linear, angular):
 
 if __name__ == '__main__' :
     try:
-        initialise ()
+        teleoperator()
 
     except rospy.ROSInterruptException:
         pass
