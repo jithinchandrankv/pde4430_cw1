@@ -82,7 +82,8 @@ If the reached to the given position,it will inform "destination reached".
 RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and flow.
 
 
-It will gives information about subcriber,topics,node and publisher.
+![rqt automovement](https://user-images.githubusercontent.com/117764288/204134862-982a247f-9dd2-4972-af43-820fa8124b9c.JPG)
+
 
 
 
