@@ -28,43 +28,46 @@ variable_angular_speed=angular_speed *2
 #teleoperator () send linear and angular values to move_cmd
 
 def teleoperator():
-
+    try:
   
-    while not rospy.is_shutdown():
+        while not rospy.is_shutdown():
 
-        k = ord (getch.getch())
+            k = ord (getch.getch())
         
-        if k==65:
-            rospy.loginfo("Up")
-            move_turtle(linear_speed,0.0)
+            if k==65:
+                rospy.loginfo("Up")
+                move_turtle(linear_speed,0.0)
             
-        if k==66:
-            rospy.loginfo("Down")
-            move_turtle(-linear_speed,0.0)
+            if k==66:
+                rospy.loginfo("Down")
+                move_turtle(-linear_speed,0.0)
             
-        if k==67:
-            rospy.loginfo("Right")
-            move_turtle(0.0,-angular_speed)
+            if k==67:
+                rospy.loginfo("Right")
+                move_turtle(0.0,-angular_speed)
             
-        if k==68:
-            rospy.loginfo("Left")
-            move_turtle ( 0.0,angular_speed)
+            if k==68:
+                rospy.loginfo("Left")
+                move_turtle ( 0.0,angular_speed)
 
-        if k==119:
-            rospy.loginfo("forward speed ")
-            move_turtle(variable_linear_speed,0.0)
+            if k==119:
+                rospy.loginfo("forward speed ")
+                move_turtle(variable_linear_speed,0.0)
 
-        if k==115:
-            rospy.loginfo("backward speed")
-            move_turtle(-variable_linear_speed,0.0)
+            if k==115:
+                rospy.loginfo("backward speed")
+                move_turtle(-variable_linear_speed,0.0)
             
-        if k==100:
-            rospy.loginfo("Right Angular speed")
-            move_turtle(0.0,-variable_angular_speed)
-        if k==97:
-            rospy.loginfo("left Angular speed ")
-            move_turtle(0.0,variable_angular_speed)
-        
+            if k==100:
+                rospy.loginfo("Right Angular speed")
+                move_turtle(0.0,-variable_angular_speed)
+            if k==97:
+                rospy.loginfo("left Angular speed ")
+                move_turtle(0.0,variable_angular_speed)
+
+     
+    except Exception as error:   
+        print(error)   
         
 #defined move_turtle and add values to move_cmd
 
