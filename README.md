@@ -49,7 +49,7 @@ Added seperate python file for each task .To run this package,always to run  "ro
    
    
    
-   RQT_GRAPH:It will gives information about subcriber,topics,node and publisher.
+   RQT_GRAPH:It will gives information about subcriber,topics,node ,publisher and flow. 
    
    
    
@@ -77,6 +77,12 @@ If the reached to the given position,it will inform "destination reached".
 
 
 ![automovement move](https://user-images.githubusercontent.com/117764288/204134626-6aef58f3-ba5e-403e-933a-507c82272c51.JPG)
+
+
+RQT GRAPH:It will gives information about subcriber,topics,node ,publisher and flow.
+
+
+It will gives information about subcriber,topics,node and publisher.
 
 
 
