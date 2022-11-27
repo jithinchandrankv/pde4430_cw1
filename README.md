@@ -95,6 +95,9 @@ In this task, turtle will detect wall and move away from that.For that assigned 
 
 
 
+![wall detection](https://user-images.githubusercontent.com/117764288/204141326-c4d99a7d-4f2a-496e-b178-1c5d5afbb989.JPG)
+
+
 
 Need to run turtlesim_node,turtle_teleoperator.py and turtle_antiwallcollision.py file in the terminal.
 
