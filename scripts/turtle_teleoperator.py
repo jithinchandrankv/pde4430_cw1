@@ -5,6 +5,9 @@ import rospy
 import getch
 from geometry_msgs.msg import Twist
 
+print (" UP/DOWN/LEFT/RIGHT KEY IN KEYBOARD")
+print (" A=FORWARD SPEED/B=BACKWARD SPEED/C=RIGHT ANGULAR SPEED/D=LEFT ANGULAR SPEED ")
+
 #initiated "turtle_teleoperator" and publish to cmd_vel
 
 pub = rospy.Publisher ('turtle1/cmd_vel', Twist, queue_size=10)
@@ -29,7 +32,7 @@ def teleoperator():
   
     while not rospy.is_shutdown():
 
-        k = ord(getch.getch())
+        k = ord (getch.getch())
         
         if k==65:
             rospy.loginfo("Up")
@@ -50,9 +53,11 @@ def teleoperator():
         if k==119:
             rospy.loginfo("forward speed ")
             move_turtle(variable_linear_speed,0.0)
+
         if k==115:
             rospy.loginfo("backward speed")
             move_turtle(-variable_linear_speed,0.0)
+            
         if k==100:
             rospy.loginfo("Right Angular speed")
             move_turtle(0.0,-variable_angular_speed)
