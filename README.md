@@ -43,10 +43,9 @@ Added seperate python file for each task .To run this package,always to run  "ro
 
 ## Task 2:Autonomous navigation to any given coordinate
 
-In this task , turtle will move to any given position with proper orientation and velocity.
-For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
+In this task , turtle will move to any given position with proper orientation and velocity.For that we need to run  "turtlesim_node " and "turtle_automovement.py " in terminalbox.
 
-after run thr python file in the terminal,terminal will ask for the X and Y destination coordinate.If the reached to the given position,it will inform "destination reached". 
+After run thE python file in the terminal,terminal will ask for the X and Y destination coordinate.If the reached to the given position,it will inform "destination reached". 
 
 ## Task 3:Avoiding wall collision
 
